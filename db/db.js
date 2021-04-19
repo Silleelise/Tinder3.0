@@ -71,3 +71,30 @@ function select(name){
 
 }
 module.exports.select = select;
+
+function update(payload){
+    return new Promise((resolve, reject) => {
+        const sql = `UPDATE [Tinder2.0].[user] SET (email, gender, city, birthdate, name, hashed_password) VALUES (@email, @gender, @city, @birthdate, @name, @hashed_password)`
+        const request = new Request(sql, (err) => {
+            if (err){
+                reject(err)
+                console.log(err)
+            }
+        });
+        request.addParameter('email', TYPES.Text, payload.email)
+        request.addParameter('gender', TYPES.Text, payload.gender)
+        request.addParameter('city', TYPES.Text, payload.city)
+        request.addParameter('birthdate', TYPES.Date, payload.birthdate)
+        request.addParameter('name', TYPES.Text, payload.name)
+        request.addParameter('hashed_password', TYPES.Text, payload.hashed_password)
+       
+
+        request.on('requestCompleted', (row) => {
+            console.log('User has been updated', row);
+            resolve('User updated', row)
+        });
+        connection.execSql(request)
+
+    });
+}
+module.exports.update = update;
