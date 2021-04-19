@@ -76,15 +76,15 @@ async function patch(context, req){
 
 async function DELETE(context, req){
     try{
-        let payload = req.body;
-        await db.DELETE(payload)
+        let name = req.query.name;
+        let user = await db.DELETE(name)
         context.res = {
-            body: {status: 'Succes'}
-        }
+            body: user
+        };
     } catch(error){
         context.res = {
             status: 400,
-            body: error.message
+            body: `No user - ${error.message}`
         }
     }
 }
