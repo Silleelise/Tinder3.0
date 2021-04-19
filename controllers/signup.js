@@ -6,7 +6,7 @@ form.addEventListener('submit', function(e) {
     var email = document.getElementById("email").value
     var gender = document.getElementById("gender").value
     var city = document.getElementById("city").value
-    var birtdate = document.getElementById("birtdate").value
+    var birthdate = document.getElementById("birthdate").value
     var name = document.getElementById("name").value
     var hashed_password = document.getElementById("hashed_password").value
 
@@ -16,7 +16,7 @@ form.addEventListener('submit', function(e) {
             email: email,
             gender: gender,
             city: city, 
-            birtdate: birtdate,
+            birthdate: birthdate,
             name: name,
             hashed_password: hashed_password
         }), 
