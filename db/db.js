@@ -72,7 +72,7 @@ function select(name){
 }
 module.exports.select = select;
 
-function update(payload){
+function put(payload){
     return new Promise((resolve, reject) => {
         const sql = `UPDATE [Tinder2.0].[user] SET 
         email = '@email', 
@@ -102,4 +102,4 @@ function update(payload){
 
     });
 }
-module.exports.update = update;
+module.exports.put = put;
