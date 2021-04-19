@@ -103,3 +103,26 @@ function patch(payload){
     });
 }
 module.exports.patch = patch;
+
+function select(name){
+    return new Promise((resolve, reject) => {
+        const sql = `DELETE FROM [Tinder2.0].[user] WHERE name = @name`
+        const request = new Request(sql, (err, rowcount) => {
+            if (err){
+                reject(err)
+                console.log(err)
+            } else if (rowcount == 0) {
+                reject({message: 'User does not exist'})
+            }
+        });
+        request.addParameter('name', TYPES.VarChar, name)
+    
+        request.on('row', (columns) => {
+            resolve(columns)
+        });
+        connection.execSql(request)
+    })
+
+}
+module.exports.select = select;
+
