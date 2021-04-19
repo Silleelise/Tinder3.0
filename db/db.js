@@ -104,7 +104,7 @@ function patch(payload){
 }
 module.exports.patch = patch;
 
-function select(name){
+function DELETE(name){
     return new Promise((resolve, reject) => {
         const sql = `DELETE FROM [Tinder2.0].[user] WHERE name = @name`
         const request = new Request(sql, (err, rowcount) => {
@@ -124,5 +124,5 @@ function select(name){
     })
 
 }
-module.exports.select = select;
+module.exports.DELETE = DELETE;
 
