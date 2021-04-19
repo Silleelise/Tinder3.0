@@ -11,7 +11,7 @@ form.addEventListener('submit', function(e) {
 
 
     fetch("http://localhost:7071/api/HttpTrigger1test", {
-        method: 'UPDATE',
+        method: 'PUT',
         body: JSON.stringify({
             email: email,
             gender: gender,
