@@ -11,7 +11,10 @@ form.addEventListener('submit', function(e) {
 
 
     fetch("http://localhost:7071/api/HttpTrigger1test", {
-        method: 'PUT',
+        method: 'PACTH',
+        headers: {
+            "Content-Type": "application/json; charset-UTF-8"
+        },
         body: JSON.stringify({
             email: email,
             gender: gender,
@@ -19,9 +22,7 @@ form.addEventListener('submit', function(e) {
             birthdate: birthdate,
             name: name,
         }), 
-        headers: {
-            "Content-Type": "application/json; charset-UTF-8"
-        }
+       
     })
     .then((response) => {
         return response.json()
