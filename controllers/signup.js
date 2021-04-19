@@ -10,7 +10,7 @@ form.addEventListener('submit', function(e) {
     var name = document.getElementById("name").value
     var hashed_password = document.getElementById("hashed_password").value
 
-    fetch("http://localhost:7071/api/user", {
+    fetch("http://localhost:7071/api/HttpTrigger1test", {
         method: 'POST',
         body: JSON.stringify({
             email: email,
