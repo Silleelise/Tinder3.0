@@ -36,7 +36,7 @@ function insert(payload){
         request.addParameter('city', TYPES.Text, payload.city)
         request.addParameter('birthdate', TYPES.Date, payload.birthdate)
         request.addParameter('name', TYPES.Text, payload.name)
-        request.addParameter('name', TYPES.Text, payload. hashed_password)
+        request.addParameter('hashed_password', TYPES.Text, payload.hashed_password)
        
 
         request.on('requestCompleted', (row) => {
