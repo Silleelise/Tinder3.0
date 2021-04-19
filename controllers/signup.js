@@ -34,24 +34,26 @@ form.addEventListener('submit', function(e) {
     })
 })
 
-var getButton = document.getElementById("getUsers")
+var getButton = document.getElementById("deleteUsers")
 
 getButton.addEventListener("click", function(){
     var name1 = document.getElementById("name").value
-    fetch(`http://localhost:7071/api/HttpTrigger1test?name=${name1}`)
-        .then(
-            function(response){
-                if (response.status !== 200){
-                    console.log("Noget gik galt" + response.status);
-                    return;
-                }
+    
+    fetch(`https://example.com/HttpTrigger1test, ${name1}`, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(null),
+      })
+      .then((response) => response.json())
+      //Then with the data from the response in JSON...
+      .then((data) => {
+        console.log('Success:', data);
+      })
+      //Then with the error genereted...
+      .catch((error) => {
+        console.error('Error:', error);
+      });
 
-                response.json().then(function (data) {
-                    console.log(data);
-                });
-            }
-        )
-        .catch(function (err){
-            console.log(err);
-        });
-})
+});
