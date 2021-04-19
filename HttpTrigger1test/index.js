@@ -15,8 +15,8 @@ module.exports = async function (context, req) {
         case 'POST':
             await post(context, req);
             break;
-        case 'UPDATE':
-            await update(context,req);
+        case 'PUT':
+            await put(context,req);
             break
         default:
             context.res = {
@@ -56,10 +56,10 @@ async function post(context, req){
     }
 }
 
-async function update(context, req){
+async function put(context, req){
     try{
         let payload = req.body;
-        await db.update(payload)
+        await db.put(payload)
         context.res = {
             body: {status: 'Succes'}
         }
