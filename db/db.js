@@ -52,7 +52,7 @@ module.exports.insert = insert;
 
 function select(name){
     return new Promise((resolve, reject) => {
-        const sql = 'SELECT * FROM Tinder2.0.user where name = @name'
+        const sql = 'SELECT * FROM [Tinder2.0].[user] where name = @name'
         const request = new Request(sql, (err, rowcount) => {
             if (err){
                 reject(err)
