@@ -10,7 +10,7 @@ form.addEventListener('submit', function(e) {
     var name = document.getElementById("name").value
 
 
-    fetch("http://localhost:7071/api/HttpTrigger1test", {
+    fetch(`http://localhost:7071/api/HttpTrigger1test${this.id}`, {
         method: 'PACTH',
         headers: {
             "Content-Type": "application/json; charset-UTF-8"
