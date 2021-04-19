@@ -38,7 +38,7 @@ var getButton = document.getElementById("getUsers")
 
 getButton.addEventListener("click", function(){
     var name1 = document.getElementById("name").value
-    fetch(`http://localhost:7071/api/user?name=${name1}`)
+    fetch(`http://localhost:7071/api/HttpTrigger1test?name=${name1}`)
         .then(
             function(response){
                 if (response.status !== 200){
