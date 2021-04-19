@@ -56,10 +56,10 @@ async function post(context, req){
     }
 }
 
-async function put(context, req){
+async function patch(context, req){
     try{
         let payload = req.body;
-        await db.put(payload)
+        await db.patch(payload)
         context.res = {
             body: {status: 'Succes'}
         }
