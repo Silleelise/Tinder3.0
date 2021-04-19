@@ -32,12 +32,12 @@ function insert(payload){
                 console.log(err)
             }
         });
-        request.addParameter('email', TYPES.Text, payload.email)
-        request.addParameter('gender', TYPES.Text, payload.gender)
-        request.addParameter('city', TYPES.Text, payload.city)
+        request.addParameter('email', TYPES.VarChar, payload.email)
+        request.addParameter('gender', TYPES.VarChar, payload.gender)
+        request.addParameter('city', TYPES.VarChar, payload.city)
         request.addParameter('birthdate', TYPES.Date, payload.birthdate)
-        request.addParameter('name', TYPES.Text, payload.name)
-        request.addParameter('hashed_password', TYPES.Text, payload.hashed_password)
+        request.addParameter('name', TYPES.VarChar, payload.name)
+        request.addParameter('hashed_password', TYPES.VarChar, payload.hashed_password)
        
 
         request.on('requestCompleted', (row) => {
@@ -87,11 +87,11 @@ function update(payload){
                 console.log(err)
             }
         });
-        request.addParameter('email', TYPES.Text, payload.email)
-        request.addParameter('gender', TYPES.Text, payload.gender)
-        request.addParameter('city', TYPES.Text, payload.city)
+        request.addParameter('email', TYPES.VarChar, payload.email)
+        request.addParameter('gender', TYPES.VarChar, payload.gender)
+        request.addParameter('city', TYPES.VarChar, payload.city)
         request.addParameter('birthdate', TYPES.Date, payload.birthdate)
-        request.addParameter('name', TYPES.Text, payload.name)
+        request.addParameter('name', TYPES.VarChar, payload.name)
        
 
         request.on('requestCompleted', (row) => {
