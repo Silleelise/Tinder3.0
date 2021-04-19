@@ -31,11 +31,11 @@ function insert(payload){
                 console.log(err)
             }
         });
-        request.addParameter('email', TYPES.VarChar, payload.email)
-        request.addParameter('gender', TYPES.VarChar, payload.gender)
-        request.addParameter('city', TYPES.VarChar, payload.city)
-        request.addParameter('birthdate', TYPES.VarChar, payload.birthdate)
-        request.addParameter('name', TYPES.Date, payload.name)
+        request.addParameter('email', TYPES.Text, payload.email)
+        request.addParameter('gender', TYPES.Text, payload.gender)
+        request.addParameter('city', TYPES.Text, payload.city)
+        request.addParameter('birthdate', TYPES.Date, payload.birthdate)
+        request.addParameter('name', TYPES.Text, payload.name)
 
         request.on('requestCompleted', (row) => {
             console.log('User inserted', row);
