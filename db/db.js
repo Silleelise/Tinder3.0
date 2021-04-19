@@ -24,7 +24,7 @@ module.exports.startDb = startDb;
 
 function insert(payload){
     return new Promise((resolve, reject) => {
-        const sql = `INSERT INTO Tinder2.0.user (email, gender, city, birthdate, name) VALUES (@email, @gender, @city, @birthdate, @name)`
+        const sql = `INSERT INTO [Tinder2.0].[user] (email, gender, city, birthdate, name) VALUES (@email, @gender, @city, @birthdate, @name)`
         const request = new Request(sql, (err) => {
             if (err){
                 reject(err)
