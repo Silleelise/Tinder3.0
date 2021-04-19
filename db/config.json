@@ -1,0 +1,14 @@
+{
+    "server": "cbsdating.database.windows.net",
+    "authentication": {
+        "type": "default",
+        "options": {
+            "userName": "Andreas",
+            "password": "Uxy34qjnibc."
+        }
+    },
+    "options": {
+        "encrypt": true,
+        "database": "Dating"
+    }
+}
