@@ -74,7 +74,13 @@ module.exports.select = select;
 
 function update(payload){
     return new Promise((resolve, reject) => {
-        const sql = `UPDATE [Tinder2.0].[user] SET (email, gender, city, birthdate, name, hashed_password) VALUES (@email, @gender, @city, @birthdate, @name, @hashed_password)`
+        const sql = `UPDATE [Tinder2.0].[user] SET 
+        email = '@email', 
+        gender = '@gender', 
+        city = '@city', 
+        birthdate = '@birthdate', 
+        name = '@name', 
+        WHERE name = '@name'`
         const request = new Request(sql, (err) => {
             if (err){
                 reject(err)
