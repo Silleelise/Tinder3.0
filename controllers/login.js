@@ -1,21 +1,27 @@
-var getButton = document.getElementById("login")
+/*form = document.getElementById("login")
 
-getButton.addEventListener("click", function(){
-    var name1 = document.getElementById("name").value
-    fetch(`http://localhost:7071/api/login?name=${name1}`)
-        .then(
-            function(response){
-                if (response.status !== 200){
-                    console.log("Noget gik galt" + response.status);
-                    return;
+        form.addEventListener("submit", function(e){
+            e.preventDefault()
+        
+            var name = document.getElementById("name").value
+            
+               
+            fetch(`http://localhost:7071/api/login`,  {
+                method: 'POST',
+                body: JSON.stringify({ 
+                    name: name
+                }), 
+                headers: {
+                    "Content-Type": "application/json; charset-UTF-8"
                 }
-
-                response.json().then(function (data) {
-                    console.log(data);
-                });
-            }
-        )
-        .catch(function (err){
-            console.log(err);
-        });
-})
+            })
+                .then((response) => {
+                        return response.json()
+                    })
+                    .then((data) => {
+                        console.log(data)
+                    }).catch((err) =>{
+                        console.log(err + "sille")
+                    })
+                })*/
+        
