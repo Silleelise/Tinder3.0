@@ -104,26 +104,24 @@ function update(payload){
 }
 module.exports.update = update;
 
-function DELETE(name){
+function deleteUser(payload) {
     return new Promise((resolve, reject) => {
-        const sql = `DELETE FROM [Tinder2.0].[user] WHERE name = ${name}`
-        const request = new Request(sql, (err, rowcount) => {
+        const sql = `DELETE FROM [Tinder2.0].[user] WHERE email = @email`
+        const request = new Request(sql, (err) => {
             if (err){
                 reject(err)
                 console.log(err)
-
-            } else if (rowcount == 0) {
-                reject({message: 'User does not exist'})
-            }
+            } 
         });
-        request.addParameter('name', TYPES.VarChar, name)
+        request.addParameter('email', TYPES.VarChar,payload.email)
     
-        request.on('row', (columns) => {
-            resolve(columns)
+        request.on('requestCompleted', (row) => {
+            console.log('User deleted',row)
+            resolve('user deleted', row)
         });
         connection.execSql(request)
     })
 
 }
-module.exports.DELETE = DELETE;
+module.exports.deleteUser = deleteUser;
 
