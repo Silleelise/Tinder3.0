@@ -1,4 +1,5 @@
 {
+  "scriptFile": "updateuser.js",
   "bindings": [
     {
       "authLevel": "function",
