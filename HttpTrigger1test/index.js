@@ -14,12 +14,6 @@ module.exports = async function (context, req) {
             break;
         case 'POST':
             await post(context, req);
-            break;
-        case 'PUT':
-            await put(context,req);
-            break
-        case 'DELETE':
-            await DELETE(context,req);
             break
         default:
             context.res = {
@@ -55,36 +49,6 @@ async function post(context, req){
         context.res = {
             status: 400,
             body: error.message
-        }
-    }
-}
-
-async function patch(context, req){
-    try{
-        let payload = req.body;
-        await db.patch(payload)
-        context.res = {
-            body: {status: 'Succes'}
-        }
-    } catch(error){
-        context.res = {
-            status: 400,
-            body: error.message
-        }
-    }
-}
-
-async function DELETE(context, req){
-    try{
-        let name = req.query.name;
-        let user = await db.DELETE(name)
-        context.res = {
-            body: user
-        };
-    } catch(error){
-        context.res = {
-            status: 400,
-            body: `No user - ${error.message}`
         }
     }
 }
