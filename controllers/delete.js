@@ -3,7 +3,7 @@ var getButton = document.getElementById("deleteUsers")
 getButton.addEventListener("click", function(){
     var name1 = document.getElementById("name").value
     
-    fetch(`https://example.com/HttpTrigger1test, ${name1}`, {
+    fetch(`http://localhost:7071/api/deleteuser, ${name1}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
