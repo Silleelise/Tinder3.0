@@ -125,9 +125,9 @@ function DELETE(name, city){
     })
 
 }
-module.exports.DELETE = DELETE;
+module.exports.DELETE = DELETE;  xd
 
-function login(name, city) {
+function login(name, city) { 
     return new Promise((resolve, reject) => {
         const sql = `SELECT * FROM [Tinder2.0].[user] WHERE name = @name AND city = @city`
         const request = new Request(sql, (err, rowcount) => {
