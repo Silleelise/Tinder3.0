@@ -106,12 +106,12 @@ module.exports.patch = patch;
 
 function DELETE(name){
     return new Promise((resolve, reject) => {
-        const sql = `DELETE FROM [Tinder2.0].[user] WHERE name = '@name'`
+        const sql = `DELETE FROM [Tinder2.0].[user] WHERE name = ${name}`
         const request = new Request(sql, (err, rowcount) => {
             if (err){
                 reject(err)
-                console.log(err)
-                
+                console.log(name)
+
             } else if (rowcount == 0) {
                 reject({message: 'User does not exist'})
             }
