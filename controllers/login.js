@@ -14,7 +14,7 @@ var form = document.getElementById("login")
                 city: city
         }), 
             headers: {
-            "Content-Type": "application/json; charset-UTF-8"
+            "Content-Type": "application/json; charset-UTF-8",
         }
             })
                 .then((response) => {
