@@ -12,12 +12,10 @@ var form = document.getElementById("login")
             body:JSON.stringify({ 
                 name: name,
                 city: city
-                
-    
         }), 
             headers: {
             "Content-Type": "application/json; charset-UTF-8"
-        },
+        }
             })
                 .then((response) => {
                     return response.json()
@@ -26,5 +24,5 @@ var form = document.getElementById("login")
                     console.log(data)
                     }).catch((err) =>{
                     console.log(err)
-                            });
+                            })
                         })      
