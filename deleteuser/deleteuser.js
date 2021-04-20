@@ -25,10 +25,10 @@ module.exports = async function (context, req) {
 
 async function DELETE(context, req){
     try{
-        let name = req.query.name;
-        let user = await db.DELETE(name)
+        let payload = req.body;
+        await db.deleteUser(payload)
         context.res = {
-            body: user
+            body: {status: 'Delete succes'}
         };
     } catch(error){
         context.res = {
