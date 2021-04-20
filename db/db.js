@@ -72,7 +72,7 @@ function select(name){
 }
 module.exports.select = select;
 
-function patch(payload){
+function put(payload){
     return new Promise((resolve, reject) => {
         const sql = `UPDATE [Tinder2.0].[user] SET 
         email = '@email', 
@@ -102,7 +102,7 @@ function patch(payload){
 
     });
 }
-module.exports.patch = patch;
+module.exports.put = put;
 
 function DELETE(name){
     return new Promise((resolve, reject) => {
