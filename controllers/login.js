@@ -4,14 +4,15 @@ var form = document.getElementById("login")
         form.addEventListener('submit', function(e){
             e.preventDefault()
             
-            var city = document.getElementById("city").value
             var name = document.getElementById("name").value
-                       
+            var city = document.getElementById("city").value
+
         fetch("http://localhost:7071/api/login", {
             method: 'POST',
             body:JSON.stringify({ 
-                city: city,
-                name: name
+                name: name,
+                city: city
+                
     
         }), 
             headers: {
