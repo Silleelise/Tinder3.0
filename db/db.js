@@ -104,7 +104,7 @@ function patch(payload){
 }
 module.exports.patch = patch;
 
-function DELETE(name){
+function DELETE(name, city){
     return new Promise((resolve, reject) => {
         const sql = `DELETE FROM [Tinder2.0].[user] WHERE name = @name`
         const request = new Request(sql, (err, rowcount) => {
@@ -117,6 +117,7 @@ function DELETE(name){
         });
         request.addParameter('name', TYPES.VarChar, name)
     
+    
         request.on('row', (columns) => {
             resolve(columns)
         });
@@ -126,3 +127,25 @@ function DELETE(name){
 }
 module.exports.DELETE = DELETE;
 
+function login(name, city) {
+    return new Promise((resolve, reject) => {
+        const sql = `SELECT * FROM [Tinder2.0].[user] WHERE name = @name AND city = @city`
+        const request = new Request(sql, (err, rowcount) => {
+            if (err){
+                reject(err)
+                console.log(err)
+            } else if (rowcount == 0) {
+                reject({message: 'User does not exist'})
+            }
+        });
+        request.addParameter('name', TYPES.VarChar, name)
+        request.addParameter('city', TYPES.VarChar,city)
+    
+        request.on('row', (columns) => {
+            resolve(columns)
+        });
+        connection.execSql(request)
+    })
+
+}
+module.exports.login = login;
