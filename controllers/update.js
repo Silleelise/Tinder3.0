@@ -10,8 +10,8 @@ form.addEventListener('submit', function(e) {
     var name = document.getElementById("name").value
 
 
-    fetch(`http://localhost:7071/api/HttpTrigger1test${this.id}`, {
-        method: 'PACTH',
+    fetch(`http://localhost:7071/api/updateuser${this.id}`, {
+        method: 'PUT',
         headers: {
             "Content-Type": "application/json; charset-UTF-8"
         },
@@ -34,7 +34,7 @@ form.addEventListener('submit', function(e) {
     })
 })
 
-var getButton = document.getElementById("getUsers")
+/*var getButton = document.getElementById("getUsers")
 
 getButton.addEventListener("click", function(){
     var name1 = document.getElementById("name").value
@@ -54,4 +54,4 @@ getButton.addEventListener("click", function(){
         .catch(function (err){
             console.log(err);
         });
-})
+})*/
