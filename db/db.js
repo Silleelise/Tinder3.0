@@ -125,3 +125,26 @@ function deleteUser(payload) {
 }
 module.exports.deleteUser = deleteUser;
 
+function login(payload) { 
+    return new Promise((resolve, reject) => {
+        const sql = `SELECT * FROM [Tinder2.0].[user] WHERE name = @name AND city = @city`
+        const request = new Request(sql, (err, rowcount) => {
+            if (err){
+                reject(err)
+                console.log(err)
+            } 
+            else if (rowcount == 0) {
+                reject({message: 'User does not exist'})
+            }
+        });
+        request.addParameter('name', TYPES.VarChar, payload.name)
+        request.addParameter('city', TYPES.VarChar, payload.city)
+    
+        request.on('row', (columns) => {
+            resolve(columns)
+        });
+        connection.execSql(request)
+    })
+
+}
+module.exports.login = login;
