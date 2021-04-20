@@ -9,46 +9,17 @@
     <div>
     <form id="login" method="POST" style="text-align: center;">
         <h1>Login</h1>
-        <label for="name">Insert your name</label>
-        <input type="text" id="name" name="name" placeholder="name">
-        <br></br>
         <label for="city ">Insert your city</label>
         <input type="text" id="city" name="city" placeholder="city">
+        <br></br>
+        <label for="name">Insert your name</label>
+        <input type="text" id="name" name="name" placeholder="name">
         <br></br>
         <button type="submit" id="login">Login</button>
       </form>
 
     </div>
   
-    <script>
-    var form = document.getElementById("login")
-
-        form.addEventListener("submit", function(e){
-            e.preventDefault()
-        
-            var name = document.getElementById("name").value
-            
-               
-            fetch(`http://localhost:7071/api/login`,  {
-                method: 'POST',
-                body: JSON.stringify({ 
-                    name: name
-                }), 
-                headers: {
-                    "Content-Type": "application/json; charset-UTF-8"
-                }
-            })
-                .then((response) => {
-                        return response.json()
-                    })
-                    .then((data) => {
-                        console.log(data)
-                    }).catch((err) =>{
-                        console.log(err + "sille")
-                    })
-                })
-        </script>
-
-   
+    <script src="/controllers/login.js"></script> 
 </body>
 </html>
