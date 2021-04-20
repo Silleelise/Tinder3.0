@@ -111,6 +111,7 @@ function DELETE(name){
             if (err){
                 reject(err)
                 console.log(err)
+                
             } else if (rowcount == 0) {
                 reject({message: 'User does not exist'})
             }
