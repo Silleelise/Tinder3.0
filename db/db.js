@@ -127,7 +127,7 @@ function DELETE(name, city){
 }
 module.exports.DELETE = DELETE; 
 
-function login(name, city) { 
+function login(payload) { 
     return new Promise((resolve, reject) => {
         const sql = `SELECT * FROM [Tinder2.0].[user] WHERE name = @name AND city = @city`
         const request = new Request(sql, (err, rowcount) => {
@@ -139,8 +139,8 @@ function login(name, city) {
                 reject({message: 'User does not exist'})
             }
         });
-        request.addParameter('name', TYPES.VarChar, name)
-        request.addParameter('city', TYPES.VarChar,city)
+        request.addParameter('name', TYPES.VarChar, payload.name)
+        request.addParameter('city', TYPES.VarChar, payload.city)
     
         request.on('row', (columns) => {
             resolve(columns)
