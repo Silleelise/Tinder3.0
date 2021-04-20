@@ -78,8 +78,7 @@ function put(payload){
         email = ${email}, 
         gender = ${gender}, 
         city = ${city}, 
-        birthdate = ${birthdate}, 
-        name = ${name}
+        birthdate = ${birthdate}
         WHERE name = ${name}`
         const request = new Request(sql, (err) => {
             if (err){
