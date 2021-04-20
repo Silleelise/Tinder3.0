@@ -134,7 +134,8 @@ function login(name, city) {
             if (err){
                 reject(err)
                 console.log(err)
-            } else if (rowcount == 0) {
+            } 
+            else if (rowcount == 0) {
                 reject({message: 'User does not exist'})
             }
         });

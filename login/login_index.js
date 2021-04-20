@@ -21,6 +21,7 @@ switch (req.method) {
             break
 }
 
+
 async function post(context, req){
     try{
         let name = req.query.name;
