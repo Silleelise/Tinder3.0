@@ -6,7 +6,9 @@
       "type": "httpTrigger",
       "direction": "in",
       "name": "req",
+      "city": "req",
       "methods": [
+        "get",
         "post"
       ]
     },
