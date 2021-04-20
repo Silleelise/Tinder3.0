@@ -125,7 +125,7 @@ function DELETE(name, city){
     })
 
 }
-module.exports.DELETE = DELETE;  xd
+module.exports.DELETE = DELETE; 
 
 function login(name, city) { 
     return new Promise((resolve, reject) => {
