@@ -92,8 +92,7 @@ function put(payload){
         request.addParameter('city', TYPES.VarChar, payload.city)
         request.addParameter('birthdate', TYPES.Date, payload.birthdate)
         request.addParameter('name', TYPES.VarChar, payload.name)
-       
-
+    
         request.on('requestCompleted', (row) => {
             console.log('User has been updated', row);
             resolve('User updated', row)
