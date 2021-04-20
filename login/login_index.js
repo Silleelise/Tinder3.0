@@ -24,11 +24,10 @@ switch (req.method) {
 
 async function post(context, req){
     try{
-        let name = req.query.name;
-        let city = req.query.city;
-        let user = await db.login(name, city)
+        let payload = req.body
+        await db.login(payload)
         context.res = {
-            body: user
+            body: {status: 'Succes with logging in'}
         }
     } catch(error){
         context.res = {
