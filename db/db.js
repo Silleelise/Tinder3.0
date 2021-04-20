@@ -72,27 +72,29 @@ function select(name){
 }
 module.exports.select = select;
 
-function put(payload){
+function update(payload){
     return new Promise((resolve, reject) => {
-        const sql = `UPDATE [Tinder2.0].[user] SET 
-        email = ${email}, 
-        gender = ${gender}, 
-        city = ${city}, 
-        birthdate = ${birthdate}
-        WHERE name = ${name}`
+        const sql = `UPDATE OI SET 
+        name = @name, 
+        gender = @gender, 
+        city = @city, 
+        birthdate = @birthdate
+        FROM [Tinder2.0].[user] as OI
+        WHERE email = @email`
         const request = new Request(sql, (err) => {
             if (err){
                 reject(err)
                 console.log(err)
             }
         });
+        console.log(payload.email)
         request.addParameter('email', TYPES.VarChar, payload.email)
         request.addParameter('gender', TYPES.VarChar, payload.gender)
         request.addParameter('city', TYPES.VarChar, payload.city)
         request.addParameter('birthdate', TYPES.Date, payload.birthdate)
         request.addParameter('name', TYPES.VarChar, payload.name)
     
-        request.on('requestCompleted', (row) => {
+            request.on('requestCompleted', (row) => {
             console.log('User has been updated', row);
             resolve('User updated', row)
         });
@@ -100,7 +102,7 @@ function put(payload){
 
     });
 }
-module.exports.put = put;
+module.exports.update = update;
 
 function DELETE(name){
     return new Promise((resolve, reject) => {
