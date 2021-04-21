@@ -10,8 +10,8 @@ form.addEventListener('submit', function(e) {
     var name = document.getElementById("name").value
 
 
-    fetch(`http://localhost:7071/api/updateuser${this.id}`, {
-        method: 'PUT',
+    fetch(`http://localhost:7071/api/updateuser`, {
+        method: 'PATCH',
         headers: {
             "Content-Type": "application/json; charset-UTF-8"
         },
