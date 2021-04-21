@@ -2,23 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Super sej hjemmeside</title>
+    <title>Opdater din bruger</title>
 </head>
 <body>
     <div>
-        <h1>update</h1>
-        <form id="update" method="put">
+        <h1>Opdater din bruger</h1>
+        <p>Din bruger opdaters på din email,
+            så vær sikker på at du skriver din email rigtigt
+        </p>
+        <form id="update" method="patch">
             <input type="email" id="email" placeholder="email"/>
             <input type="text" id="gender" placeholder="gender"/>
             <input type="text" id="city" placeholder="city"/>
             <input type="text" id="birthdate" placeholder="birthdate"/>
             <input type="text" id="name" placeholder="name"/>
-            <button type="submit" name="Submit"> Post user</button>
+            <button type="submit" name="Update">Opdater din bruger</button> 
         </form>
-    </div>
-    <div>
-        <h1>Get user by name</h1>
-        <button type="button" id="getUsers">Get User</button>
     </div>
     <script src="/controllers/update.js"></script>
 </body>
