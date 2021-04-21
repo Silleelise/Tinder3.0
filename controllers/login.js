@@ -9,14 +9,15 @@ var form = document.getElementById("login")
 
         fetch("http://localhost:7071/api/login", {
             method: 'POST',
+            //redirect: 'follow',
+            headers: {
+                "Content-Type": "application/json; charset-UTF-8"    
+            },
             body:JSON.stringify({ 
                 name: name,
                 city: city
-        }), 
-            headers: {
-            "Content-Type": "application/json; charset-UTF-8",
-        }
-            })
+             }),
+        })
                 .then((response) => {
                     return response.json()
                      })
@@ -25,4 +26,4 @@ var form = document.getElementById("login")
                     }).catch((err) =>{
                     console.log(err)
                             })
-                        })      
+                        })  
