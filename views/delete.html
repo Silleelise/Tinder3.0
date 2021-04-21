@@ -2,13 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Super sej hjemmeside</title>
+    <title>Slet bruger</title>
 </head>
 <body>
     <div>
-        <h1>Delete user by name</h1>
-        <button type="button" id="deleteUsers">Get User</button>
+        <h1>Slet din burger</h1>
+        <p>For at slette din bruger, skal du indtaste email
+            og derefter trykke på slet bruger knappen.
+        </p>
+        <form id="deleteUsers" method="delete">
+            <input type="email" id="email" placeholder="email"/>
+            <button type="submit" name="Delete"> Slet bruger</button>
+        </form>
     </div>
-    <script src="/controllers/delete.js"></script>
+    <script src="../controllers/delete.js"></script>
+   
 </body>
 </html>
