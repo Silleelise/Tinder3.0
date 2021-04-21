@@ -17,7 +17,8 @@ getButton.addEventListener("click", function(){
                 console.log("Noget gik galt" + response.status);
                 return;
             }
-            response.json().then(function (data) {
+            response.json()
+            .then(function (data) {
                 console.log(data);
             });
         }
