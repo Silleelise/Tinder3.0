@@ -20,6 +20,7 @@ getButton.addEventListener("click", function(){
             response.json()
             .then(function (data) {
                 console.log(data);
+                //window.location.href = "signup.html";
             });
         }
     )
