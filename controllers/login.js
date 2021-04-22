@@ -9,7 +9,6 @@ var form = document.getElementById("login")
 
         fetch("http://localhost:7071/api/login", {
             method: 'POST',
-            //redirect: 'follow',
             headers: {
                 "Content-Type": "application/json; charset-UTF-8"    
             },
@@ -22,7 +21,9 @@ var form = document.getElementById("login")
                     return response.json()
                      })
                 .then((data) => {
-                    console.log(data)
+                    console.log(data);
+                    window.location.href ="profil.html"
+
                     }).catch((err) =>{
                     console.log(err)
                             })
