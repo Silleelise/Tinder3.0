@@ -127,7 +127,7 @@ module.exports.deleteUser = deleteUser;
 
 function login(payload) { 
     return new Promise((resolve, reject) => {
-        const sql = `SELECT * FROM [Tinder2.0].[user] WHERE name = @name AND city = @city`
+        const sql = `SELECT * FROM [Tinder2.0].[user] WHERE email = @email AND hashed_password = @hashed_password`
         const request = new Request(sql, (err, rowcount) => {
             if (err){
                 reject(err)
@@ -137,8 +137,8 @@ function login(payload) {
                 reject({message: 'User does not exist'})
             }
         });
-        request.addParameter('name', TYPES.VarChar, payload.name)
-        request.addParameter('city', TYPES.VarChar, payload.city)
+        request.addParameter('email', TYPES.VarChar, payload.email)
+        request.addParameter('hashed_password', TYPES.VarChar, payload.hashed_password)
     
         request.on('row', (columns) => {
             resolve(columns)
