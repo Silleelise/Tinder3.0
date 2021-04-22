@@ -29,6 +29,7 @@ form.addEventListener('submit', function(e) {
     })
     .then((data) => {
         console.log(data)
+        window.location.href = "profile.html";
     }).catch((err) =>{
         console.log(err)
     })
