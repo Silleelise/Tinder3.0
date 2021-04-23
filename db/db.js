@@ -19,7 +19,6 @@ function startDb(){
         connection.connect();
     })
 }
-
 module.exports.sqlConnection = connection;
 module.exports.startDb = startDb;
 
@@ -39,14 +38,12 @@ function insert(payload){
         request.addParameter('name', TYPES.VarChar, payload.name)
         request.addParameter('hashed_password', TYPES.VarChar, payload.hashed_password)
         request.addParameter('interest', TYPES.VarChar, payload.interest)
-       
 
         request.on('requestCompleted', (row) => {
             console.log('User inserted', row);
             resolve('user inserted', row)
         });
         connection.execSql(request)
-
     });
 }
 module.exports.insert = insert;
