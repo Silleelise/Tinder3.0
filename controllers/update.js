@@ -8,6 +8,7 @@ form.addEventListener('submit', function(e) {
     var city = document.getElementById("city").value
     var birthdate = document.getElementById("birthdate").value
     var name = document.getElementById("name").value
+    var interest = document.getElementById("interest").value
 
 
     fetch(`http://localhost:7071/api/updateuser`, {
@@ -21,6 +22,7 @@ form.addEventListener('submit', function(e) {
             city: city, 
             birthdate: birthdate,
             name: name,
+            interest: interest
         }), 
        
     })
