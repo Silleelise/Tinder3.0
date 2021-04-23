@@ -12,10 +12,27 @@
         </p>
         <form id="update" method="patch">
             <input type="email" id="email" placeholder="email"/>
-            <input type="text" id="gender" placeholder="gender"/>
+
+            <label>Gender</label>
+    
+            <select name="gender" id="gender" required>
+                <option value="" disabled>----</option>
+                <option value="female">Female</option>
+                <option value="male">Male</option>
+            </select>
+
             <input type="text" id="city" placeholder="city"/>
             <input type="text" id="birthdate" placeholder="birthdate"/>
             <input type="text" id="name" placeholder="name"/>
+
+            <label>Interest</label>
+
+            <select name="interest" id="interest" required>
+                <option value="" disabled>----</option>
+                <option value="female">Female</option>
+                <option value="male">Male</option>
+              </select>
+
             <button type="submit" name="Update">Opdater din bruger</button> 
         </form>
     </div>
