@@ -9,6 +9,7 @@ form.addEventListener('submit', function(e) {
     var birthdate = document.getElementById("birthdate").value
     var name = document.getElementById("name").value
     var hashed_password = document.getElementById("hashed_password").value
+    var interest = document.getElementById("interest").value
 
     fetch("http://localhost:7071/api/HttpTrigger1test", {
         method: 'POST',
@@ -18,7 +19,8 @@ form.addEventListener('submit', function(e) {
             city: city, 
             birthdate: birthdate,
             name: name,
-            hashed_password: hashed_password
+            hashed_password: hashed_password,
+            interest: interest
         }), 
         headers: {
             "Content-Type": "application/json; charset-UTF-8"
