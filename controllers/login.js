@@ -21,10 +21,10 @@ form.addEventListener("submit", function (e) {
     })
     .then((data) => {
       console.log(data);
-      sessionStorage.setItem('user',email);
       window.location.href = "profile.html";
     })
     .catch((err) => {
       console.log(err);
     });
 });
+
