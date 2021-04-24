@@ -34,7 +34,7 @@ function insert(payload){
         request.addParameter('email', TYPES.VarChar, payload.email)
         request.addParameter('gender', TYPES.VarChar, payload.gender)
         request.addParameter('region', TYPES.VarChar, payload.region)
-        request.addParameter('age', TYPES.Varchar, payload.age)
+        request.addParameter('age', TYPES.Int, payload.age)
         request.addParameter('name', TYPES.VarChar, payload.name)
         request.addParameter('hashed_password', TYPES.VarChar, payload.hashed_password)
         request.addParameter('interest', TYPES.VarChar, payload.interest)
@@ -80,7 +80,7 @@ function update(payload){
         interest = @interest
         FROM [Tinder2.0].[user] as OI
         WHERE email = @email`
-        const request = new Request(sql, (err) => {
+        const request = new Request(sql, (err) => {5
             if (err){
                 reject(err)
                 console.log(err)
@@ -90,7 +90,7 @@ function update(payload){
         request.addParameter('email', TYPES.VarChar, payload.email)
         request.addParameter('gender', TYPES.VarChar, payload.gender)
         request.addParameter('region', TYPES.VarChar, payload.region)
-        request.addParameter('age', TYPES.VarChar, payload.age)
+        request.addParameter('age', TYPES.Int, payload.age)
         request.addParameter('name', TYPES.VarChar, payload.name)
         request.addParameter('interest', TYPES.VarChar, payload.interest)
     
