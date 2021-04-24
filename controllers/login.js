@@ -27,3 +27,13 @@ form.addEventListener("submit", function (e) {
       console.log(err);
     });
 });
+
+let field = document.getElementById("email")
+
+if(sessionStorage.getItem("autosave")){
+  field.value = sessionStorage.getItem("autosave")
+}
+
+field.addEventListener("change", function(){
+  sessionStorage.setItem("autosave", field.value)
+})
