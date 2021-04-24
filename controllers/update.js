@@ -1,4 +1,13 @@
 var form = document.getElementById("update")
+function isAuth(){
+    let email =  sessionStorage.getItem('email');
+    if (email ){
+        
+    }else{
+        
+    }
+}
+
 
 form.addEventListener('submit', function(e) {
     e.preventDefault()
