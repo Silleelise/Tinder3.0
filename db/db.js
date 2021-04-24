@@ -24,7 +24,7 @@ module.exports.startDb = startDb;
 
 function insert(payload){
     return new Promise((resolve, reject) => {
-        const sql = `INSERT INTO [Tinder2.0].[user] (email, gender, city, birthdate, name, hashed_password, interest) VALUES (@email, @gender, @city, @birthdate, @name, @hashed_password, @interest)`
+        const sql = `INSERT INTO [Tinder2.0].[user] (email, gender, region, age, name, hashed_password, interest) VALUES (@email, @gender, @region, @age, @name, @hashed_password, @interest)`
         const request = new Request(sql, (err) => {
             if (err){
                 reject(err)
@@ -33,8 +33,8 @@ function insert(payload){
         });
         request.addParameter('email', TYPES.VarChar, payload.email)
         request.addParameter('gender', TYPES.VarChar, payload.gender)
-        request.addParameter('city', TYPES.VarChar, payload.city)
-        request.addParameter('birthdate', TYPES.Date, payload.birthdate)
+        request.addParameter('region', TYPES.VarChar, payload.region)
+        request.addParameter('age', TYPES.Varchar, payload.age)
         request.addParameter('name', TYPES.VarChar, payload.name)
         request.addParameter('hashed_password', TYPES.VarChar, payload.hashed_password)
         request.addParameter('interest', TYPES.VarChar, payload.interest)
@@ -75,8 +75,8 @@ function update(payload){
         const sql = `UPDATE OI SET 
         name = @name, 
         gender = @gender, 
-        city = @city, 
-        birthdate = @birthdate,
+        region = @region, 
+        age = @age,
         interest = @interest
         FROM [Tinder2.0].[user] as OI
         WHERE email = @email`
@@ -89,8 +89,8 @@ function update(payload){
         console.log(payload.email)
         request.addParameter('email', TYPES.VarChar, payload.email)
         request.addParameter('gender', TYPES.VarChar, payload.gender)
-        request.addParameter('city', TYPES.VarChar, payload.city)
-        request.addParameter('birthdate', TYPES.Date, payload.birthdate)
+        request.addParameter('region', TYPES.VarChar, payload.region)
+        request.addParameter('age', TYPES.VarChar, payload.age)
         request.addParameter('name', TYPES.VarChar, payload.name)
         request.addParameter('interest', TYPES.VarChar, payload.interest)
     
