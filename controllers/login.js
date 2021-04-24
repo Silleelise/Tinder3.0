@@ -21,7 +21,6 @@ form.addEventListener("submit", function (e) {
     })
     .then((data) => {
       console.log(data);
-      sessionStorage.setItem('user',email);
       window.location.href = "profile.html";
     })
     .catch((err) => {
@@ -29,12 +28,3 @@ form.addEventListener("submit", function (e) {
     });
 });
 
-let field = document.getElementById("email")
-
-if(sessionStorage.getItem("autosave")){
-  field.value = sessionStorage.getItem("autosave")
-}
-
-field.addEventListener("change", function(){
-  sessionStorage.setItem("autosave", field.value)
-})
