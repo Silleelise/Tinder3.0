@@ -20,7 +20,6 @@ form.addEventListener("submit", function (e) {
       return response.json();
     })
     .then((data) => {
-      
       console.log(data);
       sessionStorage.setItem('user',email);
       window.location.href = "profile.html";
