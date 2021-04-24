@@ -5,8 +5,8 @@ form.addEventListener('submit', function(e) {
 
     var email = document.getElementById("email").value
     var gender = document.getElementById("gender").value
-    var city = document.getElementById("city").value
-    var birthdate = document.getElementById("birthdate").value
+    var region = document.getElementById("region").value
+    var age = document.getElementById("age").value
     var name = document.getElementById("name").value
     var hashed_password = document.getElementById("hashed_password").value
     var interest = document.getElementById("interest").value
@@ -16,8 +16,8 @@ form.addEventListener('submit', function(e) {
         body: JSON.stringify({
             email: email,
             gender: gender,
-            city: city, 
-            birthdate: birthdate,
+            region: region, 
+            age: age,
             name: name,
             hashed_password: hashed_password,
             interest: interest

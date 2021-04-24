@@ -21,8 +21,17 @@
                 <option value="male">Male</option>
             </select>
 
-            <input type="text" id="city" placeholder="city"/>
-            <input type="text" id="birthdate" placeholder="birthdate"/>
+            <label> Hvilken region bor du i? </label>
+            <select name="region" id="region" required>
+                <option value="" disabled>----</option>
+                <option value="Hovedstaden">Hovedstaden</option>
+                <option value="Sjælland">Sjælland</option>
+                <option value="Syddanmark">Syddanmark</option>
+                <option value="Midtjylland">Midtjylland</option>
+                <option value="Nordjylland">Nordjylland</option>
+            </select>
+
+            <input type="number" id="age" placeholder="age"/>
             <input type="text" id="name" placeholder="name"/>
 
             <label>Interest</label>
