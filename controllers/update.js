@@ -1,9 +1,11 @@
 var form = document.getElementById("update")
 
 function isAuth(){
-    let email =  sessionStorage.getItem('email');
-    if (email == true){
-        window.location.href = "update.html" 
+    let email = sessionStorage.getItem('email');
+    if (email == null){
+        console.log("nu er vi nået til linje 6")
+        console.log(email)
+        return 
     }else{
         window.location.href = "login.html" 
     }
