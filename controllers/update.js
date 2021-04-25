@@ -2,10 +2,10 @@ var form = document.getElementById("update")
 
 function isAuth(){
     let email =  sessionStorage.getItem('email');
-    if (email == null){
-        window.location.href = "login.html" 
-    }else{
+    if (email == true){
         window.location.href = "update.html" 
+    }else{
+        window.location.href = "login.html" 
     }
 }
 
