@@ -166,6 +166,9 @@ function matches(payload){
         request.addParameter('age', TYPES.Int,payload.age)
 
         request.on('row', (columns) => {
+            columns.forEach(columns =>{
+                result += columns.value
+            })
             resolve(columns)
         });
         connection.execSql(request)
