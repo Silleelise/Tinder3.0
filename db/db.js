@@ -165,11 +165,7 @@ function matches(payload){
         request.addParameter('region', TYPES.VarChar,payload.region)
         request.addParameter('age', TYPES.Int,payload.age)
 
-
-
-    
         request.on('row', (columns) => {
-            response [column.metadata.colName] = column.value
             resolve(columns)
         });
         connection.execSql(request)
