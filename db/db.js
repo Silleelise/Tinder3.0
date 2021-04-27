@@ -169,6 +169,7 @@ function matches(payload){
 
     
         request.on('row', (columns) => {
+            response [column.metadata.colName] = column.value
             resolve(columns)
         });
         connection.execSql(request)
