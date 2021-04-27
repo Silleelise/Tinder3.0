@@ -1,4 +1,5 @@
 /*const chai = require("chai");
+
 const { response } = require ('express');
 const expect = require ('chai').expect
 const fetch = require("node-fetch");
@@ -17,7 +18,7 @@ describe("test", () => {
         done();
       });
   });
-});*/
+});
 
 const { response } = require("express");
 const expect = require("chai").expect
@@ -32,3 +33,8 @@ describe("test af endpoint register", function(){
     });
 })
 
+
+module.exports = {
+  log: jest.fn()
+};
+*/
