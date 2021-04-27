@@ -158,8 +158,6 @@ function matches(payload){
             if (err){
                 reject(err)
                 console.log(err)
-            } else if (rowcount == 0) {
-                reject({message: 'User does not exist'})
             }
         });
         request.addParameter('name', TYPES.VarChar,payload.name)
@@ -170,8 +168,9 @@ function matches(payload){
 
 
     
-        request.on('row', (columns) => {
-            resolve(columns)
+        request.on('requestCompleted', (row) => {
+            console.log('User has been updated', row);
+            resolve('User updated', row)
         });
         connection.execSql(request)
     })
