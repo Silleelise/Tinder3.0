@@ -26,9 +26,9 @@ module.exports = async function (context, req) {
 async function get(context, req){
     try{
         let payload = req.body
-        await db.matches(payload)
+        let user= await db.matches(payload)
         context.res = {
-            body: {status: 'Update succes'}
+            body: user
         }
     } catch(error){
         context.res = {
