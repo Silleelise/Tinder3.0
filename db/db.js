@@ -148,3 +148,31 @@ function login(payload) {
 
 }
 module.exports.login = login;
+
+function matches(name,gender,region,age){
+    return new Promise((resolve, reject) => {
+        const sql = 'SELECT * FROM [Tinder2.0].[user] where name = @name'
+        const request = new Request(sql, (err, rowcount) => {
+            if (err){
+                reject(err)
+                console.log(err)
+            } else if (rowcount == 0) {
+                reject({message: 'User does not exist'})
+            }
+        });
+        request.addParameter('name', TYPES.VarChar, name)
+        request.addParameter('gender', TYPES.VarChar, gender)
+        request.addParameter('region', TYPES.VarChar, region)
+        request.addParameter('age', TYPES.Int, age)
+
+
+
+    
+        request.on('row', (columns) => {
+            resolve(columns)
+        });
+        connection.execSql(request)
+    })
+
+}
+module.exports.select = select;
