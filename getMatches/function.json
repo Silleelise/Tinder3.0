@@ -1,4 +1,5 @@
 {
+  "sprictFile": "matches.js",
   "bindings": [
     {
       "authLevel": "function",
