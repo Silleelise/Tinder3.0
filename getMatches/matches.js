@@ -25,11 +25,8 @@ module.exports = async function (context, req) {
 
 async function get(context, req){
     try{
-        let name = req.query.name;
-        let gender = req.query.gender;
-        let region = req.query.region;
-        let age = req.query.age;
-        let user = await db.matches(name,gender,region,age)
+        let payload = req.body
+        await db.matches(payload)
         context.res = {
             body: user
         };
