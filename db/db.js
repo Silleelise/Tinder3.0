@@ -175,4 +175,4 @@ function matches(name,gender,region,age){
     })
 
 }
-module.exports.select = select;
+module.exports.matches = matches;
