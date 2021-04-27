@@ -151,7 +151,7 @@ module.exports.login = login;
 
 function matches(name,gender,region,age){
     return new Promise((resolve, reject) => {
-        const sql = 'SELECT * FROM [Tinder2.0].[user] where name = @name'
+        const sql = 'SELECT name, gender, region, age FROM [Tinder2.0].[user] WHERE gender = @gender AND region = @region'
         const request = new Request(sql, (err, rowcount) => {
             if (err){
                 reject(err)
