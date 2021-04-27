@@ -4,12 +4,14 @@
   "description": "",
   "scripts": {
     "start": "func start",
-    "test": "mocha"
+    "test": "jest",
+    "test:watch": "jest --watch --detectOpenHandles"
   },
   "dependencies": {
     "bcrypt": "^5.0.1",
     "chai-http": "^4.3.0",
     "cors": "^2.8.5",
+    "jest": "^26.6.3",
     "tedious": "^11.0.7"
   },
   "devDependencies": {
