@@ -149,7 +149,7 @@ function login(payload) {
 }
 module.exports.login = login;
 
-function matches(name,gender,region,age){
+function matches(payload){
     return new Promise((resolve, reject) => {
         const sql = `SELECT name, gender, region, age 
         FROM [Tinder2.0].[user] 
@@ -162,10 +162,10 @@ function matches(name,gender,region,age){
                 reject({message: 'User does not exist'})
             }
         });
-        request.addParameter('name', TYPES.VarChar, name)
-        request.addParameter('gender', TYPES.VarChar, gender)
-        request.addParameter('region', TYPES.VarChar, region)
-        request.addParameter('age', TYPES.Int, age)
+        request.addParameter('name', TYPES.VarChar,payload.name)
+        request.addParameter('gender', TYPES.VarChar,payload.gender)
+        request.addParameter('region', TYPES.VarChar,payload.region)
+        request.addParameter('age', TYPES.Int,payload.age)
 
 
 
