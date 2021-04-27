@@ -168,9 +168,9 @@ function matches(payload){
 
 
     
-        request.on('requestCompleted', (row) => {
-            console.log('User has been updated', row);
-            resolve('User updated', row)
+        request.on('requestCompleted', (user) => {
+            console.log('User has been updated', user);
+            resolve('User updated', user)
         });
         connection.execSql(request)
     })
