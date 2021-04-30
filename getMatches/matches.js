@@ -29,7 +29,11 @@ async function get(context, req){
         let user= await db.matches(payload)
             response = {}
             user.forEach(function(column){
-                response[column.metadata.colName] = user.value
+                let columname = column.metadata.colName
+                response[column.metadata.colName] = column.value
+                context.res = {
+                    body: response
+                }
         
         // context.res = {}
         // user.forEach(function(user){
