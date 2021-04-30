@@ -21,7 +21,7 @@ form.addEventListener('submit', function(e) {
     var age = document.getElementById("age").value
 
 
-    fetch(`http://localhost:7071/api/updateuser`, {
+    fetch(`http://localhost:7071/api/getMatches`, {
         method: 'POST',
         headers: {
             "Content-Type": "application/json; charset-UTF-8"
@@ -37,8 +37,8 @@ form.addEventListener('submit', function(e) {
     .then((response) => {
         return response.json()
     })
-    .then((data) => {
-        console.log(data)
+    .then(function(data){
+        console.log(data);
     }).catch((err) =>{
         console.log(err)
     })
