@@ -30,7 +30,7 @@ form.addEventListener("submit", function (e) {
 });
 
 
-var form = document.getElementById("logout");
+/*var form = document.getElementById("logout");
 
 form.addEventListener("submit", function (e) {
   e.preventDefault();
@@ -55,9 +55,9 @@ form.addEventListener("submit", function (e) {
     console.log(data);
     sessionStorage.setItem('user',email);
     window.location.href = "login.html";
-    req.session.destroy();
+    req.session.destroy(req.sessionemail);
   })
   .catch((err) => {
     console.log(err);
   });
-});
+});*/
