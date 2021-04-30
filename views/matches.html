@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tinder</title>
+</head>
+<body onload="isAuth()">
+
+    <h1>Find your matches</h1>
+
+    <div>
+        <form id = "matches" method = "post">
+
+            <input type="text" id="name" placeholder="name"/>
+
+            <label>Hvilket køn er du interesseret i?</label>
+
+            <select name="gender" id="gender" required>
+                <option value="" disabled>----</option>
+                <option value="female">Female</option>
+                <option value="male">Male</option>
+            </select>
+
+            <label> Hvilken region vil du gerne matche på?</label>
+            <select name="region" id="region" required>
+                <option value="" disabled>----</option>
+                <option value="Hovedstaden">Hovedstaden</option>
+                <option value="Sjælland">Sjælland</option>
+                <option value="Syddanmark">Syddanmark</option>
+                <option value="Midtjylland">Midtjylland</option>
+                <option value="Nordjylland">Nordjylland</option>
+            </select>
+            <input type="number" id="age" placeholder="age"/>
+            <button type="submit" name="Submit">Register præferencer</button> 
+
+        </form>
+    </div>
+    <script src="../controllers/matches.js"></script>
+
+
+
+</body>
+
+
+
+
+</html>
