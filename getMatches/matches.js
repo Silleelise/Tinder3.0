@@ -26,19 +26,13 @@ module.exports = async function (context, req) {
 async function get(context, req){
     try{
         let payload = req.body
-        let user= await db.matches(payload)
+        let users = await db.matches(payload)
             response = {}
-            user.forEach(function(column){
-                let columname = column.metadata.colName
-                response[column.metadata.colName] = column.value
+            users.forEach(function(user){
+                response[user.metadata.colName] = user.value
                 context.res = {
                     body: response
                 }
-        
-        // context.res = {}
-        // user.forEach(function(user){
-        //     context.res[user.metadata.colName] = user.value
-        // })
     })
     } catch(error){
         context.res = {
