@@ -150,26 +150,6 @@ function login(payload) {
 
 module.exports.login = login;
 
-function logout(payload) { 
-    return new Promise((resolve, reject) => {
-        const sql = `SELECT * FROM [Tinder2.0].[user] WHERE email = @email AND hashed_password = @hashed_password`
-        const request = new Request(sql, (err, rowcount) => {
-            if (err){
-                reject(err)
-                console.log(err)
-            } 
-        });
-        request.addParameter('email', TYPES.VarChar, payload.email)
-        request.addParameter('hashed_password', TYPES.VarChar, payload.hashed_password)
-    
-        request.on('row', (columns) => {
-            resolve(columns)
-        });
-        connection.execSql(request)
-    })
-
-}
-module.exports.logout = logout;
 
 function matches(payload){
     return new Promise((resolve, reject) => {
