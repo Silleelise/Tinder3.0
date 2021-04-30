@@ -1,4 +1,4 @@
-var form = document.getElementById("update")
+var form = document.getElementById("matches")
 
 function isAuth(){
     let email = sessionStorage.getItem('email');
@@ -15,31 +15,29 @@ function isAuth(){
 form.addEventListener('submit', function(e) {
     e.preventDefault()
 
-    var email = document.getElementById("email").value
+    var name = document.getElementById("name").value
     var gender = document.getElementById("gender").value
     var region = document.getElementById("region").value
     var age = document.getElementById("age").value
-    var name = document.getElementById("name").value
-    var interest = document.getElementById("interest").value
 
 
     fetch(`http://localhost:7071/api/updateuser`, {
-        method: 'PATCH',
+        method: 'POST',
         headers: {
             "Content-Type": "application/json; charset-UTF-8"
         },
         body: JSON.stringify({
-            email: email,
+            name: name,
             gender: gender,
             region: region, 
-            age: age,
-            name: name,
-            interest: interest
+            age: age
         }), 
        
     })
     .then((response) => {
-        return response.json()
+        return response.json().then(function (data) {
+            console.log(data);
+        });
     })
     .then((data) => {
         console.log(data)
