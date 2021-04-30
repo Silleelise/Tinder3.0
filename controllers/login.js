@@ -30,14 +30,16 @@ form.addEventListener("submit", function (e) {
 });
 
 
-/*form.addEventListener("submit", function () {
+var form = document.getElementById("logout");
+
+form.addEventListener("submit", function (e) {
   e.preventDefault();
 
   var email = document.getElementById("email").value;
   var hashed_password = document.getElementById("hashed_password").value;
 
   fetch("http://localhost:7071/api/login", {
-    method: "POST",
+    method: "GET",
     headers: {
       "Content-Type": "application/json; charset-UTF-8",
     },
@@ -52,10 +54,10 @@ form.addEventListener("submit", function (e) {
   .then((data) => {
     console.log(data);
     sessionStorage.setItem('user',email);
-    window.location.href = "profile.html";
+    window.location.href = "login.html";
     req.session.destroy();
   })
   .catch((err) => {
     console.log(err);
   });
-});*/
+});
