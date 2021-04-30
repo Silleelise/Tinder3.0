@@ -10,6 +10,9 @@ const db = require('../db/db');
     console.log("Error connecting to the database", error.message)
 }
 switch (req.method) {
+    case 'GET':
+        await get(context, req);
+        break;
     case 'POST':
         await post(context, req);
         break
