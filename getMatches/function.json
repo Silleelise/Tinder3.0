@@ -1,5 +1,5 @@
 {
-  "scriptFile": "matches.js",
+  "scriptFile": "matches_index.js",
   "bindings": [
     {
       "authLevel": "function",
