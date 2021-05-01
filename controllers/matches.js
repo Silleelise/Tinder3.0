@@ -1,3 +1,4 @@
+
 var form = document.getElementById("matches")
 
 function isAuth(){
@@ -40,18 +41,20 @@ form.addEventListener('submit', function(e) {
     .then(function(data){
         console.log(data);
     })
-    .then(users => showMatches(users.results));
+    .then(users => showMatches(users));
     }).catch((err) =>{
         console.log(err)
     })
 
-showMatches = users => {
-    const usersDiv = document.querySelector('#display-users');
-users.forEach(user =>{
-    const userElement = document.createElement('p');
-    userElement.innerText = `Info om dine matches:
-    ${user.name, user.age, user.gender, user.region}`;
+    function showMatches(users){
+        const usersDiv = document.querySelector('#display-users');
+    users.forEach(user =>{
+        const userElement = document.createElement('p');
+        userElement.innerText = `Info om dine matches:
+        ${user.name, user.age, user.gender, user.region}`;
+    
+        usersDiv.append(userElement)
+    })
+    }; 
 
-    usersDiv.append(userElement)
-});
-}
+
