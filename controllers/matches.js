@@ -37,14 +37,29 @@ form.addEventListener('submit', function(e) {
     .then((response) => {
         return response.json()
     })
-    .then(function(data){
+    .then(data =>{
         console.log(data);
-        document.getElementById("matchesfrom").innerHTML = data.name;
-        document.getElementById("matchesfrom").innerHTML += data.region;
-    })
+        const html = [data]
+        .map(user =>{
+            return `
+            <div class = "user">
+            <p>Alder på dit match: ${user.age}</p>
+            <br>
+            <p>Køn på dit match: ${user.gender}</p>
+            <br>
+            <p>Navn på dit match: ${user.name}</p>
+            <br>
+            <p>Hvilken region dit match bor i: ${user.region}
+            </div>`;
+        })
+        .join("");
+        console.log(html)
+        document.querySelector("#matches")
+        .insertAdjacentHTML("beforeend",html);
     }).catch((err) =>{
         console.log(err)
     })
+})
 
 
 
