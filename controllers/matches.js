@@ -37,15 +37,19 @@ form.addEventListener('submit', function(e) {
     .then((response) => {
         return response.json()
     })
-    .then(function(data){
+    .then(data =>{
         console.log(data);
-    })
-    .then((data) => {
-        document.getElementById("matchesfrom").innerHTML = data
-    });
+        const html = data
+        .map(user =>{
+            return `<p>Info om dit match: ${user.data}</p>`;
+        })
+        .join("");
+        console.log(html)
+        document.querySelector("#matches").insertAdjacentHTML("afterbegin",html);
     }).catch((err) =>{
         console.log(err)
     })
+})
 
 
 
