@@ -39,10 +39,13 @@ form.addEventListener('submit', function(e) {
     })
     .then(function(data){
         console.log(data);
+    })
+    .then((data) => {
+        document.getElementById("matchesfrom").innerHTML = data
+    });
     }).catch((err) =>{
         console.log(err)
     })
-})
 
 
 
