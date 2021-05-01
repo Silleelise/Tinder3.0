@@ -39,10 +39,9 @@ form.addEventListener('submit', function(e) {
     })
     .then(function(data){
         console.log(data);
+        document.getElementById("matchesfrom").innerHTML = data.name;
+        document.getElementById("matchesfrom").innerHTML += data.region;
     })
-    .then((data) => {
-        document.getElementById("matchesfrom").innerHTML = data
-    });
     }).catch((err) =>{
         console.log(err)
     })
