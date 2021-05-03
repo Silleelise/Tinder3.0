@@ -167,10 +167,8 @@ function matches(payload){
             }
             context.done()
         });
-        request.addParameter('name', TYPES.VarChar,payload.name)
         request.addParameter('gender', TYPES.VarChar,payload.gender)
         request.addParameter('region', TYPES.VarChar,payload.region)
-        request.addParameter('age', TYPES.Int,payload.age)
 
         request.on('row', (columns) => {
             resolve(columns)
