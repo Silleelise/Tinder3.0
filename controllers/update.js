@@ -1,7 +1,7 @@
 var form = document.getElementById("update")
 
 function isAuth(){
-    let email = sessionStorage.getItem('email');
+    let email = sessionStorage.getItem('user');
     if (email == null){
         console.log("nu er vi nået til linje 6")
         console.log(email)
