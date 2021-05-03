@@ -5,9 +5,9 @@ function isAuth(){
     if (email == null){
         console.log("nu er vi nået til linje 6")
         console.log(email)
-        return 
+        window.location.href = "login.html"
     }else{
-        window.location.href = "login.html" 
+        return 
     }
 }
 
