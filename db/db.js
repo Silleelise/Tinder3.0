@@ -160,18 +160,16 @@ function matches(payload){
             if (err){
                 reject(err)
                 console.log(err)
-            } else {
-                context.res= {
-                    body:result
+            } else if (rowcount == 0) {
+                reject({message: 'Match does not exist'})
                 }
-            }
-            context.done()
+        
         });
         request.addParameter('gender', TYPES.VarChar,payload.gender)
         request.addParameter('region', TYPES.VarChar,payload.region)
 
-        request.on('row', (columns) => {
-            resolve(columns)
+        request.on('row', (rowcount) => {
+            resolve(rowcount)
         });
         connection.execSql(request)
     })
