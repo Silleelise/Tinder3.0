@@ -1,13 +1,13 @@
 var form = document.getElementById("matches")
 
 function isAuth(){
-    let email = sessionStorage.getItem('email');
+    let email = sessionStorage.getItem("user");
     if (email == null){
         console.log("nu er vi nået til linje 6")
         console.log(email)
-        return window.location.href = "register.html"
+        window.location.href = "register.html"
     }else{
-        window.location.href = "login.html" 
+        return 
     }
 }
 
