@@ -1,13 +1,13 @@
 var form = document.getElementById("update")
 
 function isAuth(){
-    let email = sessionStorage.getItem('user');
+    let email = sessionStorage.getItem("user");
     if (email == null){
         console.log("nu er vi nået til linje 6")
         console.log(email)
         window.location.href = "login.html"
     }else{
-        return 
+          return 
     }
 }
 
