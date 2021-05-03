@@ -5,7 +5,7 @@ function isAuth(){
     if (email == null){
         console.log("nu er vi nået til linje 6")
         console.log(email)
-        return 
+        return window.location.href = "register.html"
     }else{
         window.location.href = "login.html" 
     }
