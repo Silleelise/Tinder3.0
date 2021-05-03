@@ -160,7 +160,12 @@ function matches(payload){
             if (err){
                 reject(err)
                 console.log(err)
+            } else {
+                context.res= {
+                    body:result
+                }
             }
+            context.done()
         });
         request.addParameter('name', TYPES.VarChar,payload.name)
         request.addParameter('gender', TYPES.VarChar,payload.gender)
