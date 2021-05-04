@@ -10,7 +10,7 @@ const executeSQL = (context, user) => {
     const connection = new Connection(config);
     
     // create command to be executed
-    const request = new Request(` SELECT * FROM [Tinder2.0].[user] `, function(err){
+    const request = new Request(` SELECT COUNT(*) FROM [Tinder2.0].[user] `, function(err){
         if (err){
             context.log.error(err);
             context.res.status = 500;
