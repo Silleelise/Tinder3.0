@@ -1,4 +1,5 @@
 {
+  "scriptFile": "getuser_index.js",
   "bindings": [
     {
       "authLevel": "function",
