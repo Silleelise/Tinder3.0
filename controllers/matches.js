@@ -48,7 +48,7 @@ form.addEventListener('submit', function(e) {
         })
         .join("");
         console.log(html)
-        document.querySelector("#matches")
+        document.querySelector("#getMatches")
         .insertAdjacentHTML("beforeend",html);
     }).catch((err) =>{
         console.log(err)
