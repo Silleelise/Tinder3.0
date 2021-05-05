@@ -1,41 +1,44 @@
-/*const chai = require("chai").expect
-const chaiHttp = require("chai-http")
-const app = 'http://localhost:7071/api/getusers';
+/*const chaiHttp = require('chai-http');
+const server = 'http://localhost:7071/api/getusers';
+const { response } = require("express"); 
+const chai = require('chai')
 
-chai.use(chaiHttp);
-
-describe('users', () => {
-    describe('GET/users', () => {
-        it('should return an array of all the users', (done) => {
-            chai.requesrt(app)
-            .get('/getuser')
-            .end((err, res) => {
-                if(err) done(err);
-                expect(res).to.have.status(200);
-                expect(res).to.be.an('object');
-                expect(body.status). to.deep.equals('success');
-                expect(res.body.movies).to.be.an('array');
-            });
-        });
-    });
-});*/
-
-const chai = require("chai").expect
-const chaiHttp = require("chai-http")
-const app = 'http://localhost:7071/api/getusers';
-
+const should = require('should');
 chai.use(chaiHttp);
 
 describe('/GET book', () => {
     it('it should GET all the books', (done) => {
       chai.request(server)
           .get('/book')
-          .end((err, res) => {
-              res.should.have.status(200);
-              res.body.should.be.a('array');
-              res.body.length.should.be.eql(0);
+          .end((err, response) => {
+              //response.should.have.status(200);
+              should.exist(response.body);
+              should(response.body).be.a('array');
+              response.body.length.should.be.eql(0);
             done();
           });
     });
-});
+});*/
+
+const chai = require('chai');
+const chaiHttp = require('chai-http');
+const { response } = require('express');
+const server = 'http://localhost:7071/api/getusers';
+//const should = require('should');
+//const should = chai.should();
+
+chai.use(chaiHttp);
+
+describe('Users', () => {
+   describe('/getUseres', () => {
+       it('it should GET all the users', () => {
+           chai.request(server)
+               .get('/getusers')
+               .then((response) => {
+                response.should.have.status(200)
+                   response.should.be.a('array');
+                   done();
+                });
+       });
+   });
 });
