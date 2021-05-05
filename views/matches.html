@@ -3,24 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tinder</title>
+    <title>Match</title>
 </head>
 <body onload="isAuth()">
 
-    <h1>Find your matches</h1>
+    <h1 style="color: rgb(225, 87, 193);">What gender do you prefer?</h1>
 
     <div>
         <form id = "matches" method ="post">
 
-            <label>Hvilket køn er du interesseret i?</label>
+            <label>What gender are you interested in?</label>
 
             <select name="gender" id="gender" required>
                 <option value="" disabled>----</option>
                 <option value="female">female</option>
                 <option value="male">male</option>
             </select>
+            <br></br>
 
-            <label> Hvilken region vil du gerne matche på?</label>
+            <label>What region do you want your match to be located?</label>
             <select name="region" id="region" required>
                 <option value="" disabled>----</option>
                 <option value="Hovedstaden">Hovedstaden</option>
@@ -29,7 +30,9 @@
                 <option value="Midtjylland">Midtjylland</option>
                 <option value="Nordjylland">Nordjylland</option>
             </select>
-            <button type="submit" name="Submit">Register præferencer</button> 
+
+            <br></br>
+            <button type="submit" name="Submit">Register preferences</button> 
 
         </form>
     </div>
