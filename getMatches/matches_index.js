@@ -28,9 +28,10 @@ async function post(context, req){
         let payload = req.body
         let users = await db.matches(payload)
         console.log(users)
-            response = {}
-            users.forEach(function(user){
-                response[user.metadata.colName] = user.value
+            response = []
+            users.forEach(function(users){
+                 response[users.metadata] = users.value 
+                // reponse = users.value
                 context.res = {
                     body: response
                 }
