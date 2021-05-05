@@ -16,5 +16,7 @@
     "mocha": "^8.3.2",
     "tedious": "^11.0.7"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "should": "^13.2.3"
+  }
 }
