@@ -30,7 +30,9 @@ async function post(context, req){
         console.log(users)
             response = []
             users.forEach(function(user){
-                 response[user.metadata.colName] = user.value 
+                console.log(colName)
+                response[user.metadata.colName] = user.value 
+                console.log(user.metadata.colName)
                 // reponse = users.value
                 context.res = {
                     body: response
