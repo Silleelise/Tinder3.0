@@ -34,16 +34,16 @@ form.addEventListener('submit', function(e) {
     .then(data =>{
         console.log(data);
         const html = [data]
-        .map(user =>{
+        .map(u =>{
             return `
             <div class = "user">
-            <p>Alder på dit match: ${user.age}</p>
+            <p>Alder på dit match: ${u.age}</p>
             <br>
-            <p>Køn på dit match: ${user.gender}</p>
+            <p>Køn på dit match: ${u.gender}</p>
             <br>
-            <p>Navn på dit match: ${user.name}</p>
+            <p>Navn på dit match: ${u.name}</p>
             <br>
-            <p>Hvilken region dit match bor i: ${user.region}
+            <p>Hvilken region dit match bor i: ${u.region}
             </div>`;
         })
         .join("");
