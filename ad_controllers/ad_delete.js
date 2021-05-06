@@ -21,10 +21,9 @@ getButton.addEventListener("click", function(){
             .then(function (data) {
                 console.log(data);
                  return window.location.href = "ad_stats.html";
-
         }
     )
     .catch(function (err){
         console.log(err);
-    });
-})
+    })
+});
