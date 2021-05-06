@@ -37,7 +37,7 @@ function insert(payload) {
     request.addParameter("age", TYPES.Int, payload.age);
     request.addParameter("name", TYPES.VarChar, payload.name);
     request.addParameter(
-      "hashed_password",
+      "hashed_password",  
       TYPES.VarChar,
       payload.hashed_password
     );
