@@ -28,7 +28,7 @@ async function DELETE(context, req){
         let payload = req.body;
         await db.ad_deleteUser(payload)
         context.res = {
-            body: {status: 'Delete succes'}
+            body: {status: 'Delete success'}
         };
     } catch(error){
         context.res = {
