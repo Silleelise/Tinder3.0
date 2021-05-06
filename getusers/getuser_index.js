@@ -6,10 +6,8 @@ const config = require('../db/config.json')
 const executeSQL = (context, user) => {
     var result = '';
 
-    // create connection object
     const connection = new Connection(config);
     
-    // create command to be executed
     const request = new Request(` SELECT COUNT(*) FROM [Tinder2.0].[user] `, function(err){
         if (err){
             context.log.error(err);
@@ -23,7 +21,6 @@ const executeSQL = (context, user) => {
         context.done();
     });
 
-    // execute request
     connection.on('connect', function(err){
         if (err){
             context.log.error(err);
