@@ -18,7 +18,7 @@ form.addEventListener('submit', function(e) {
     var region = document.getElementById("region").value
 
     fetch(`http://localhost:7071/api/getMatches`, {
-        method: 'POST',
+        method: 'GET',
         headers: {
             "Content-Type": "application/json; charset-UTF-8"
         },
@@ -34,16 +34,16 @@ form.addEventListener('submit', function(e) {
     .then(data =>{
         console.log(data);
         const html = [data]
-        .map(u =>{
+        .map(user =>{
             return `
             <div class = "user">
-            <p>Alder på dit match: ${u.age}</p>
+            <p>Alder på dit match: ${user.age}</p>
             <br>
-            <p>Køn på dit match: ${u.gender}</p>
+            <p>Køn på dit match: ${user.gender}</p>
             <br>
-            <p>Navn på dit match: ${u.name}</p>
+            <p>Navn på dit match: ${user.name}</p>
             <br>
-            <p>Hvilken region dit match bor i: ${u.region}
+            <p>Hvilken region dit match bor i: ${user.region}
             </div>`;
         })
         .join("");
