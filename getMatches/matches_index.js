@@ -23,7 +23,7 @@ module.exports = async function (context, req) {
     }
 }
 
-async function post(context, req){
+async function get(context, req){
     try{
         let payload = req.body
         let users = await db.matches(payload)
