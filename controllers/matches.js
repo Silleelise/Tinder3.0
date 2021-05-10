@@ -28,12 +28,11 @@ form.addEventListener('submit', function(e) {
         }), 
        
     })
-    .then((response) => {
-        return response.json()
-    })
+    .then(response => 
+         response.json())
     .then(data =>{
         console.log(data);
-        const html = [data]
+        const html = data
         .map(user =>{
             return `
             <div class = "user">
@@ -54,6 +53,7 @@ form.addEventListener('submit', function(e) {
         console.log(err)
     })
 })
+
 
 
 

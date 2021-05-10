@@ -27,17 +27,21 @@ async function post(context, req){
     try{
         let payload = req.body
         let users = await db.matches(payload)
-        console.log(users)
-            response = []
-            users.forEach(function(user){
-                console.log(colName)
+        // console.log(users[0])
+        let all = []
+        users.forEach(function(u){
+            response = {}
+            u.forEach(function(user){
+                console.log(user.value)
                 response[user.metadata.colName] = user.value 
                 console.log(user.metadata.colName)
                 // reponse = users.value
-                context.res = {
-                    body: response
-                }
-    })
+            });
+            all.push(response)
+        })
+            context.res = {
+                body: all
+            }
     } catch(error){
         context.res = {
             status: 400,
