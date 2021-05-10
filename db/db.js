@@ -1,6 +1,6 @@
 const { Connection, Request, TYPES } = require("tedious");
 const config = require("./config.json");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcrypt"); 
 
 var connection = new Connection(config);
 
