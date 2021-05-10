@@ -21,6 +21,7 @@ getButton.addEventListener("click", function(){
             response.json()
             .then(function (data) {
                 console.log(data);
+                alert("user is deleted")
                 //window.location.href = "register.html";
         }
     )
