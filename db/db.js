@@ -1,27 +1,39 @@
-const { Connection, Request, TYPES } = require("tedious");
-const config = require("./config.json");
-const bcrypt = require("bcrypt"); 
 
+// using tedious to make Connection and Request
+const { Connection, Request, TYPES } = require("tedious");
+// get access to database through microsoft azure
+const config = require("./config.json");
+
+// make a variable that use connection with config 
 var connection = new Connection(config);
 
+
 function startDb() {
+  // make Promise with resolve and reject
   return new Promise((resolve, reject) => {
+    // makes a connection on "connect"
     connection.on("connect", (err) => {
+      // if statement that throws error is something went wrong
       if (err) {
         console.log("Connection failed");
         reject(err);
         throw err;
+        // else statement that throw resolve method and a console with message "connected"
       } else {
         console.log("Connected");
         resolve();
       }
     });
+    // function ends with connection (line 8) with connect method
     connection.connect();
   });
 }
+// export the the function, so every API have a connection with the database 
 module.exports.sqlConnection = connection;
 module.exports.startDb = startDb;
 
+
+//
 function insert(payload) {
   return new Promise((resolve, reject) => {
     const sql = `INSERT INTO [Tinder2.0].[user] (email, gender, region, age, name, hashed_password, interest) VALUES (@email, @gender, @region, @age, @name, @hashed_password, @interest)`;
