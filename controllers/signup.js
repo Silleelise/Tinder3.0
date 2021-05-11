@@ -1,5 +1,9 @@
+
+// get the form from update.html page by id 
 var form = document.getElementById("form")
 
+// Listening on all id in the update.html
+// using preventDefault, so the submit dosen't execute when the HTML page opens 
 form.addEventListener('submit', function(e) {
     e.preventDefault()
 
@@ -11,8 +15,10 @@ form.addEventListener('submit', function(e) {
     var hashed_password = document.getElementById("hashed_password").value
     var interest = document.getElementById("interest").value
 
+   // fetch the URL which comes from the Azure function http trigger 
     fetch("http://localhost:7071/api/HttpTrigger1test", {
         method: 'POST',
+        // stringify the body to JSON format
         body: JSON.stringify({
             email: email,
             gender: gender,
@@ -26,9 +32,11 @@ form.addEventListener('submit', function(e) {
             "Content-Type": "application/json; charset-UTF-8"
         }
     })
+    // return Promise with reponse in JSON format
     .then((response) => {
         return response.json()
     })
+    //use session storage and redirect to profile.html
     .then((data) => {
         console.log(data)
         sessionStorage.setItem('user',email);
