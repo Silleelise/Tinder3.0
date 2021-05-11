@@ -3,9 +3,11 @@ var form = document.getElementById("login");
 form.addEventListener("submit", function (e) {
   e.preventDefault();
 
+  // get value from email and hashed_password
   var email = document.getElementById("email").value;
   var hashed_password = document.getElementById("hashed_password").value;
 
+// fetch the API url from the Azure Function
   fetch("http://localhost:7071/api/login", {
     method: "POST",
     headers: {
@@ -19,9 +21,11 @@ form.addEventListener("submit", function (e) {
     .then((response) => {
       return response.json();
     })
+    // session storage setItem makes it possible to log in, using the user and email
     .then((data) => {
       console.log(data);
       sessionStorage.setItem('user',email);
+      // redireict to profil.html when this line is completed 
       window.location.href = "profile.html";
     })
     .catch((err) => {
