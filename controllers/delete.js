@@ -12,6 +12,8 @@ getButton.addEventListener("click", function(){
         }
       })
       .then(
+          // this function have a problem
+          // deleting a user is working, but the redirect is not working well
         function(response){
             if (response.status !== 200){
                 console.log("Noget gik galt" + response.status);
@@ -22,7 +24,6 @@ getButton.addEventListener("click", function(){
             .then(function (data) {
                 console.log(data);
                 alert("user is deleted")
-                //window.location.href = "register.html";
         }
     )
     .catch(function (err){
