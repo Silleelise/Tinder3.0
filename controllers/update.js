@@ -1,5 +1,8 @@
+
+// get the form from update.html page by id 
 var form = document.getElementById("update")
 
+// function to make session storage to work
 function isAuth(){
     let email = sessionStorage.getItem("user");
     if (email == null){
@@ -11,7 +14,7 @@ function isAuth(){
     }
 }
 
-
+// Listening on all id in the update.html
 form.addEventListener('submit', function(e) {
     e.preventDefault()
 
@@ -22,12 +25,13 @@ form.addEventListener('submit', function(e) {
     var name = document.getElementById("name").value
     var interest = document.getElementById("interest").value
 
-
+// fetch the URL which comes from the Azure function http trigger 
     fetch(`http://localhost:7071/api/updateuser`, {
         method: 'PATCH',
         headers: {
             "Content-Type": "application/json; charset-UTF-8"
         },
+        // stringify the body to JSON format
         body: JSON.stringify({
             email: email,
             gender: gender,
@@ -38,6 +42,7 @@ form.addEventListener('submit', function(e) {
         }), 
        
     })
+    // then method returns the promise from the API which is getting the promise from the db.js
     .then((response) => {
         return response.json()
     })
