@@ -1,3 +1,5 @@
+//function that keeps user logged in 
+
 function isAuth(){
     let email = sessionStorage.getItem("user");
     if (email == null){
