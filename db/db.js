@@ -113,7 +113,6 @@ function update(payload) {
         FROM [Tinder2.0].[user] as OI
         WHERE email = @email`;
     const request = new Request(sql, (err) => {
-      5;
       if (err) {
         reject(err);
         console.log(err);
